@@ -1,0 +1,9 @@
+services:
+  cron:
+    build: ../.
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Paris
+    volumes:
+      - ../data/script.py:/scripts/script.py
+      - ../data/cron.crontab:/etc/crontabs/root
