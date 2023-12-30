@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 env:
-  REGISTRY_URL: ${{ env.REGISTRY_URL }}
   REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
   REGISTRY_SECRET: ${{ secrets.REGISTRY_SECRET }}
 jobs:
