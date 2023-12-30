@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 env:
-  REGISTRY_URL: ${{ secrets.REGISTRY_URL }}
+  REGISTRY_URL: registry.frankberge.fr
   REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
   REGISTRY_SECRET: ${{ secrets.REGISTRY_SECRET }}
 jobs:
