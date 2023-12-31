@@ -23,7 +23,7 @@ jobs:
       - name: Login to Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: ${{ secrets.REGISTRY_URL }}
+          registry: ${{ vars.REGISTRY_URL }}
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_SECRET }}
 
@@ -37,5 +37,5 @@ jobs:
           context: ./src/.
           file: ./src/Dockerfile
           push: true
-          tags: ${{ secrets.REGISTRY_URL }}/cron-python:latest, ${{ secrets.REGISTRY_URL }}/cron-python:${{ steps.tag_name.outputs.TAG }}
+          tags: ${{ vars.REGISTRY_URL }}/cron-python:latest, ${{ vars.REGISTRY_URL }}/cron-python:${{ steps.tag_name.outputs.TAG }}
           platforms: linux/amd64,linux/arm64
